@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -10,7 +11,57 @@
     <input type="number" id="idade" min="0">
     <button onclick="calc()">Verificar</button>
     <p id="resultado"></p>
+    <br><br>
     
+
+    <p>Digite o numero a ser verificado:</p>
+    <input type="number" id="number" min="0">
+    <button onclick="verificar()">Verificar</button>
+    <p id="veri"></p>
+    <br><br>
     
+
+    <p>Digite o usuario:</p>
+    <input type="text" id="user" min="0">
+    <p>Digite a senha:</p>
+    <input type="password" id="senha">
+    <button onclick="login()">Login</button>
+    <p id="login"></p>
+    <br><br>
+
+    <p>Calculadora:</p>
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <p>Escolha a operação:</p>
+    <select id="operacao">
+        <option value="somar">Somar</option>
+        <option value="subtrair">Subtrair</option>
+        <option value="multiplicar">Multiplicar</option>
+        <option value="dividir">Dividir</option>
+    </select>
+    <button onclick="calcular()">Calcular</button>
+    <p id="resul1"></p>
+
+    <p>Digite o numero a ser verificado:</p>
+    <input type="number" id="number1" min="0">
+    <button onclick="parimp()">Verificar</button>
+    <p id="resultado1"></p>
+    <br><br>
+
+    <p>Digite os numeros:</p>
+    <input type="number" id="x1" min="0">
+    <input type="number" id="x2" min="0">
+    <input type="number" id="x3" min="0">
+    <button onclick="maior()">Verificar</button>
+    <p id="maior"></p>
+    <br><br>
+
+    <p>Digite as 3 medidas:</p>
+    <input type="number" id="l1" min="0" placeholder="Primeira medida">
+    <input type="number" id="l2" min="0" placeholder="Segunda medida">
+    <input type="number" id="l3" min="0" placeholder="Terceira medida">
+    <button onclick="triangulo()">Verificar</button>
+    <p id="tri"></p>
+
 </body>
 </html>

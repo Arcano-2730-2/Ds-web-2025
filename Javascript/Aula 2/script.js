@@ -1,4 +1,4 @@
-// Exibe a URL da página no console
+    // Exibe a URL da página no console
 //console.log(window.document.URL);
 
 //Primeiro exemplo

@@ -4,11 +4,13 @@ function cadastrar() {
 }
 
 function parimp() {
-    var number = document.getElementById("number").value;
+    let number = document.getElementById("number1").value;
+    let resultado = document.getElementById("resultado1");
+
     if (number % 2 == 0) {
-        document.getElementById("resultado1").innerHTML = "O número é par";
+        resultado.innerHTML = "O número é par";
     } else {
-        document.getElementById("resultado1").innerHTML ("O número é ímpar");
+        resultado.innerHTML = "O número é ímpar";
     }
 }
 
