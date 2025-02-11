@@ -24,7 +24,7 @@ var teste = confirm("Hello world");
     alert(numero1+numero2);
 */   
 //Exemplo de soma
-    var numero1 = Number.parseInt(prompt("Digite o primeiro numero"));
-    var numero2 = Number.parseInt(prompt("Digite o segundo numero"));   
-    var resultado = (numero1) + (numero2);
+    let numero1 = Number.parseInt(prompt("Digite o primeiro numero"));
+    let numero2 = Number.parseInt(prompt("Digite o segundo numero"));   
+    let resultado = (numero1) + (numero2);
     alert ("O resultado da soma é: " + resultado);
