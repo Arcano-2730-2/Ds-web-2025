@@ -20,7 +20,7 @@ function verificar(){
 function login(){
     let login = document.getElementById("user").value;
     let senha = document.getElementById("senha").value;
-    let resultado = document.getElementById("login"); // Defina a variável resultado
+    let resultado = document.getElementById("login");
 
     if (login == "admin" && senha == "1234"){
         resultado.innerHTML = "Login realizado com sucesso";}
