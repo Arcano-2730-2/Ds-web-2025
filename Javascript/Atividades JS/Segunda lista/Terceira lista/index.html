@@ -36,47 +36,51 @@
         }
     </style>
     <script>
-        function bv(){
+        function bv() {
             document.getElementById("texto1").innerHTML = "Seja bem-vindo!";
         }
-    
+
         function incrementarContador() {
             let contadorElemento = document.getElementById("contador");
             let contador = parseInt(contadorElemento.innerText);
             contadorElemento.innerText = contador + 1;
         }
-    
+
         function capt() {
             document.getElementById("texto2").innerText = document.getElementById("texto").value;
         }
-    
+
         window.onload = function() {
             bv();
-    
+
             var area = document.getElementById("area");
-    
+            var textoArea = document.getElementById("texto-a");
+
+            // Exibir a mensagem para passar o mouse ao carregar a página
+            textoArea.innerText = "Passe o mouse!";
+
             area.addEventListener("mouseenter", function() {
                 area.style.width = "280px";
                 area.style.height = "280px";
                 area.style.background = "red";
+                textoArea.innerText = "Magic!";
             });
-    
+
             area.addEventListener("mouseleave", function() {
                 area.style.width = "200px";
                 area.style.height = "200px";
                 area.style.background = "green";
+                textoArea.innerText = "Passe o mouse!";
             });
         };
     </script>
-    
     <title>Document</title>
 </head>
 <body>
-
     <div id="bv">
         <p id="texto1"></p>
     </div>
-    
+
     <h1>Contador de Cliques</h1>
     <p>O botão foi clicado <span id="contador">0</span> vezes.</p>
     <button id="botao" onclick="incrementarContador()">Clique aqui</button>
@@ -86,8 +90,10 @@
     <div>
         <p id="texto2"></p>
     </div>
-    <h1>Interaja com a área</h1>
-    <div id="area">Passe o mouse</div>
 
+    <h1>Interaja com a área</h1>
+    <div id="area">
+        <div id="texto-a"></div>
+    </div>
 </body>
 </html>
