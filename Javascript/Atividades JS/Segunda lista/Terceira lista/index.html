@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #bv {
+            width: 100%;
+            height: 90px;
+            background: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #area {
+            background: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: auto;
+        }
+    </style>
+    <script>
+        function bv(){
+            document.getElementById("texto1").innerHTML = "Seja bem-vindo!";
+        }
+    
+        function incrementarContador() {
+            let contadorElemento = document.getElementById("contador");
+            let contador = parseInt(contadorElemento.innerText);
+            contadorElemento.innerText = contador + 1;
+        }
+    
+        function capt() {
+            document.getElementById("texto2").innerText = document.getElementById("texto").value;
+        }
+    
+        window.onload = function() {
+            bv();
+    
+            var area = document.getElementById("area");
+    
+            area.addEventListener("mouseenter", function() {
+                area.style.width = "280px";
+                area.style.height = "280px";
+                area.style.background = "red";
+            });
+    
+            area.addEventListener("mouseleave", function() {
+                area.style.width = "200px";
+                area.style.height = "200px";
+                area.style.background = "green";
+            });
+        };
+    </script>
+    
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="bv">
+        <p id="texto1"></p>
+    </div>
+    
+    <h1>Contador de Cliques</h1>
+    <p>O botão foi clicado <span id="contador">0</span> vezes.</p>
+    <button id="botao" onclick="incrementarContador()">Clique aqui</button>
+
+    <h1>Campo de captura</h1>
+    <input id="texto" type="text" placeholder="Digite aqui!" oninput="capt()"><br>
+    <div>
+        <p id="texto2"></p>
+    </div>
+    <h1>Interaja com a área</h1>
+    <div id="area">Passe o mouse</div>
+
+</body>
+</html>
