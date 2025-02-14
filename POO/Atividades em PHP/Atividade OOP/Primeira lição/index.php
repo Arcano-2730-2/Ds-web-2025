@@ -220,6 +220,19 @@ class ContaBancaria {
     public function exibirConta() { 
         return "Numero da conta: " . $this->numeroconta . "<br>";
     }
+    public function depositar($deposito){
+        $this->saldo += $deposito;
+        return "Este é novo saldo ".$this->saldo;
+    }
+    public function sacar($saque){
+        if($this->saldo >= $saque){
+            $this->saldo -= $saque;
+            return "Este é novo saldo ".$this->saldo;
+        }
+        else{
+            return "Saldo insuficiente";
+        }
+    }
 }
 
 $duque = new ContaBancaria();
@@ -228,8 +241,14 @@ $duque->saldo = 50;
 $duque->numeroconta = 273027;
 
 echo $duque->exibirNome();
+echo "<br>";
 echo $duque->exibirSaldo();
+echo "<br>";
 echo $duque->exibirConta();
+echo "<br>";
+echo $duque->depositar(deposito: 100);
+echo "<br>";
+echo $duque->sacar(saque: 50);
 echo "<br>";
 
 $bruno = new ContaBancaria();

@@ -94,9 +94,11 @@ function triangulo(){
 
         if (number1 === number2 && number2 === number3){
             resultado.innerHTML = "O triângulo é válido e é equilátero.";
-        } else if (number1 === number2 || number2 === number3 || number1 === number3){
+        }
+        else if (number1 === number2 || number2 === number3 || number1 === number3){
             resultado.innerHTML = "O triângulo é válido e é isósceles.";
-        } else {
+        }
+        else {
             resultado.innerHTML = "O triângulo é válido e é escaleno.";
         }
     } else {
