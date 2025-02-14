@@ -20,11 +20,12 @@ function verificar(){
 function login(){
     let login = document.getElementById("user").value;
     let senha = document.getElementById("senha").value;
+    let resultado = document.getElementById("login"); // Defina a variável resultado
 
-    if (login == "admin" && senha == "12345"){
-        alert("Login realizado com sucesso");}
+    if (login == "admin" && senha == "1234"){
+        resultado.innerHTML = "Login realizado com sucesso";}
     else{
-        alert("Login ou senha incorretos");
+        resultado.innerHTML= "Login ou senha incorretos";
     }
 }
 
