@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartões Animados!</title>
+    <style>
+        #box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .cartao {
+            width: 200px;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+        .btn-excluir {
+            margin-top: 10px;
+            padding: 5px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn-excluir:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="criacao">
+        <input type="text" id="titulo" placeholder="Título do Cartão">
+        <br>
+        <input type="text" id="desc" placeholder="Insira sua descrição">
+        <br><br>
+        <select id="cor">
+            <option value="vermelho">Vermelho</option>
+            <option value="azul">Azul</option>
+            <option value="amarelo">Amarelo</option>
+            <option value="verde">Verde</option>
+        </select>
+        <br><br>
+        <button onclick="criar()">Criar Cartão</button>
+    </div>
+
+    <div id="box"></div>
+
+    <script>
+        function criar() {
+            let titulo = document.getElementById("titulo").value;
+            let descricao = document.getElementById("desc").value;
+            let cor = document.getElementById("cor").value;
+            let box = document.getElementById("box");
+
+            // Criar a div do cartão
+            let cartao = document.createElement("div");
+            cartao.classList.add("cartao");
+
+            // Definir a cor de fundo do cartão
+            let cores = {
+                vermelho: "red",
+                azul: "blue",
+                amarelo: "yellow",
+                verde: "green"
+            };
+            cartao.style.backgroundColor = cores[cor];
+
+            // Criar título e descrição
+            let h3 = document.createElement("h3");
+            h3.innerText = titulo;
+
+            let p = document.createElement("p");
+            p.innerText = descricao;
+
+            // Criar botão de exclusão
+            let botaoExcluir = document.createElement("button");
+            botaoExcluir.innerText = "Excluir";
+            botaoExcluir.classList.add("btn-excluir");
+
+            // Adicionar evento de clique para remover o cartão
+            botaoExcluir.onclick = function() {
+                cartao.remove();
+            };
+
+            // Adicionar elementos ao cartão
+            cartao.appendChild(h3);
+            cartao.appendChild(p);
+            cartao.appendChild(botaoExcluir);
+
+            // Adicionar cartão ao box
+            box.appendChild(cartao);
+
+            // Limpar campos após criação
+            document.getElementById("titulo").value = "";
+            document.getElementById("desc").value = "";
+        }
+    </script>
+</body>
+</html>
