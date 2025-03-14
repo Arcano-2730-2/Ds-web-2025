@@ -10,8 +10,7 @@ function validarDadosProdutos() {
     document.getElementById("erro-codigo").innerHTML = "";
     document.getElementById("erro-nome").innerHTML = "";
     document.getElementById("erro-preco").innerHTML = "";
-    document.getElementById("erro-estoque").innerHTML = "";
-    document.getElementById("erro-descricao").innerHTML = "";
+    document.getElementById("erro-estoque").innerHTML = "";    document.getElementById("erro-descricao").innerHTML = "";
 
     // Validação do código do produto
     if (codigo.length < 12) {
