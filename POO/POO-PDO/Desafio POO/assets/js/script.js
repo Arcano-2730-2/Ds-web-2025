@@ -10,7 +10,8 @@ function validarDadosProdutos() {
     document.getElementById("erro-codigo").innerHTML = "";
     document.getElementById("erro-nome").innerHTML = "";
     document.getElementById("erro-preco").innerHTML = "";
-    document.getElementById("erro-estoque").innerHTML = "";    document.getElementById("erro-descricao").innerHTML = "";
+    document.getElementById("erro-estoque").innerHTML = "";
+    document.getElementById("erro-descricao").innerHTML = "";
 
     // Validação do código do produto
     if (codigo.length < 12) {
@@ -88,4 +89,28 @@ function validarDadosCliente() {
     }
 
     return true;
+}
+function validaCadastro() {
+    var email = document.getElementById("email").value;
+    var senha = document.getElementById("senha").value;
+    var erroEmail = document.getElementById("erro-email");
+    var erroSenha = document.getElementById("erro-senha");
+    
+    // Limpar mensagens de erro
+    erroEmail.innerHTML = "";
+    erroSenha.innerHTML = "";
+
+    // Validar e-mail
+    if (email.indexOf('@') === -1) { // Verifica se o @ está presente no e-mail
+        erroEmail.innerHTML = "Formato de e-mail inválido!";
+        return false; // Impede o envio do formulário
+    }
+
+    // Validar senha
+    if (senha.length < 7) { // Verifica se a senha tem pelo menos 7 caracteres
+        erroSenha.innerHTML = "A senha precisa ter no mínimo 7 caracteres!";
+        return false; // Impede o envio do formulário
+    }
+
+    return true; // Envia o formulário se estiver válido
 }
