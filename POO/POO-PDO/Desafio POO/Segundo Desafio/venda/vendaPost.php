@@ -3,6 +3,7 @@ header("Content-Type: application/json"); //Prepara o cabeçalho para responder 
 
 
 
+
 try{
     //Validando o conteudo da requisição
     $json = file_get_contents('php://input');
@@ -100,7 +101,7 @@ try{
 
             $produtos = $data['produtos'];
             foreach ($produtos as  $produto) {
-                $stmt = $db->prepare("INSERT INTO produtosvendidos(idVenda, idProduto, preco, quantidade) VALUES(:idVenda, :idProduto, :precoProduto, :quantidade)");
+                $stmt = $db->prepare("INSERT into produtosvendidos(idVenda, idProduto, preco, quantidade) VALUES(:idVenda, :idProduto, :precoProduto, :quantidade)");
                 $stmt->bindParam(':idVenda', $idVenda);
                 $stmt->bindParam(':idProduto', $produto['id']);
                 $stmt->bindParam(':precoProduto', $produto['preco']);
@@ -129,4 +130,10 @@ try{
             'error' => $e->getMessage()
         ]);
     }
+
+
+
+
+
+
 ?>
