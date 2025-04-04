@@ -1,0 +1,1 @@
+Nova versão do software, com adição de vendas e registros das vendas.
