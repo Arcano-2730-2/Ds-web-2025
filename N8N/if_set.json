@@ -1,0 +1,247 @@
+{
+    "nodes": [
+      {
+        "parameters": {
+          "conditions": {
+            "conditions": [
+              {
+                "value1": "={{ $json.nomePaciente }}",
+                "value2": "null",
+                "operation": "equal"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "name": "If - Falta nomePaciente",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [600, 100]
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "name": "output",
+                "value": "Ah! Só preciso saber seu nome pra seguir com o agendamento 📝 Pode me dizer, por favor?",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "name": "SET - Msg nomePaciente",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 1,
+        "position": [800, 100]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "conditions": [
+              {
+                "value1": "={{ $json.email }}",
+                "value2": "null",
+                "operation": "equal"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "name": "If - Falta email",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [600, 300]
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "name": "output",
+                "value": "Agora preciso só do seu e-mail para finalizar certinho 📩 Pode me passar?",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "name": "SET - Msg email",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 1,
+        "position": [800, 300]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "conditions": [
+              {
+                "value1": "={{ $json.tipoConsulta }}",
+                "value2": "null",
+                "operation": "equal"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "name": "If - Falta tipoConsulta",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [600, 500]
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "name": "output",
+                "value": "Qual o procedimento que você gostaria de fazer? 💆‍♀️ Temos: limpeza de pele, massagem, botox...",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "name": "SET - Msg tipoConsulta",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 1,
+        "position": [800, 500]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "conditions": [
+              {
+                "value1": "={{ $json.horarioConsulta }}",
+                "value2": "null",
+                "operation": "equal"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "name": "If - Falta horarioConsulta",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [600, 700]
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "name": "output",
+                "value": "Ótimo! Agora só preciso saber qual horário você gostaria. Assim consigo agendar direitinho 😊",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "name": "SET - Msg horarioConsulta",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 1,
+        "position": [800, 700]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "conditions": [
+              {
+                "value1": "={{ $json.dataDoAgendamentoRealizado }}",
+                "value2": "null",
+                "operation": "equal"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "name": "If - Falta dataDoAgendamentoRealizado",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [600, 900]
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "name": "output",
+                "value": "Pra qual dia você quer marcar sua consulta? Me fala o dia certinho pra eu seguir com o agendamento 📆",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "name": "SET - Msg dataDoAgendamentoRealizado",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 1,
+        "position": [800, 900]
+      }
+    ],
+    "connections": {
+      "If - Falta nomePaciente": {
+        "main": [
+          [
+            {
+              "node": "SET - Msg nomePaciente",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          []
+        ]
+      },
+      "If - Falta email": {
+        "main": [
+          [
+            {
+              "node": "SET - Msg email",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          []
+        ]
+      },
+      "If - Falta tipoConsulta": {
+        "main": [
+          [
+            {
+              "node": "SET - Msg tipoConsulta",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          []
+        ]
+      },
+      "If - Falta horarioConsulta": {
+        "main": [
+          [
+            {
+              "node": "SET - Msg horarioConsulta",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          []
+        ]
+      },
+      "If - Falta dataDoAgendamentoRealizado": {
+        "main": [
+          [
+            {
+              "node": "SET - Msg dataDoAgendamentoRealizado",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          []
+        ]
+      }
+    }
+  }
+  
